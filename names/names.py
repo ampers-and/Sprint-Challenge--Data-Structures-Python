@@ -39,3 +39,14 @@ print(f"runtime: {end_time - start_time} seconds")
 # Python has built-in tools that allow for a very efficient approach to this problem
 # What's the best time you can accomplish with no restrictions on techniques or data
 # structures?
+
+#Runtime = 0.0037
+start_time2 = time.time()
+names1_set = set(names_1)
+differ = list(names1_set - set(names_2))
+
+duplicates2 = list(names1_set - set(differ))
+
+end_time2 = time.time()
+print(f"{len(duplicates2)} duplicates2:\n\n{', '.join(duplicates2)}\n\n")
+print(f"runtime: {end_time2 - start_time2} seconds")
