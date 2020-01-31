@@ -65,15 +65,34 @@ class LinkedList:
             temp1 = self.head
 
             while temp1:
-                temp2 = temp1.get_next()
-                temp3 = temp1
-                curr_next = temp1.get_next()
+                if temp1.get_next():
+                    temp2 = temp1.get_next()
+                    temp3 = temp1
+                    curr_next = temp1.get_next()
 
-                while temp2.get_next():
-                    temp2 = temp2.get_next()
-                    temp3 = temp3.get_next()
+                    if not temp2.get_next():
+                        temp3 = temp3.get_next()
+                    while temp2.get_next():
+                        temp2 = temp2.get_next()
+                        temp3 = temp3.get_next()
 
-                temp1.set_next(temp2)
-                temp2.set_next(curr_next)
-                temp3.set_next(None)
+                    temp1.set_next(temp2)
+                    temp2.set_next(curr_next)
+                    temp3.set_next(None)
                 temp1 = temp1.get_next()
+
+        self.print_list()
+
+    def print_list(self):
+        if not self.head:
+            print(None)
+
+        else:
+            current = self.head
+            list_to_print = []
+
+            while current:
+                list_to_print.append(current.value)
+                current = current.get_next()
+
+            print(list_to_print)
