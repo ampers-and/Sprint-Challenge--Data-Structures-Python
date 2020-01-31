@@ -20,7 +20,7 @@ duplicates = []
 #         if name_1 == name_2:
 #             duplicates.append(name_1)
 
-# Runtime = O(2n) -> 0.129 seconds
+# Runtime = O(nlogn) -> 0.129 seconds
 bst = BinarySearchTree(names_1[0])
 
 for name_1 in names_1:
