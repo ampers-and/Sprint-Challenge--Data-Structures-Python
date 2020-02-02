@@ -64,7 +64,7 @@ class LinkedList:
             temp3.set_next(None)
             temp1 = self.head
 
-            while temp1:
+            while temp1:  # loop 1
                 if temp1.get_next():
                     temp2 = temp1.get_next()
                     temp3 = temp1
@@ -72,7 +72,7 @@ class LinkedList:
 
                     if not temp2.get_next():
                         temp3 = temp3.get_next()
-                    while temp2.get_next():
+                    while temp2.get_next():  # loop 2
                         temp2 = temp2.get_next()
                         temp3 = temp3.get_next()
 
@@ -96,3 +96,19 @@ class LinkedList:
                 current = current.get_next()
 
             print(list_to_print)
+
+# We need to keep a reference to 3 nodes
+# to reverse the list in a single loop
+# left -> cur -> right
+#   left = self.head
+#   cur = left.get_next()
+#   left.set_next(None)
+#   while cur and cur.get_next():
+#   right = cur.get_next()
+#   cur.set_next(left)
+#   left = cur
+#   cur = right
+#   cur.set_next(left)
+# Update HEAD after we've processed
+# the last element
+# self.head = cur 
