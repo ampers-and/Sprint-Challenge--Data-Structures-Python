@@ -40,7 +40,7 @@ print(f"runtime: {end_time - start_time} seconds")
 # What's the best time you can accomplish with no restrictions on techniques or data
 # structures?
 
-#Runtime = 0.0037
+# Runtime = 0.0037s
 start_time2 = time.time()
 names1_set = set(names_1)
 differ = list(names1_set - set(names_2))
